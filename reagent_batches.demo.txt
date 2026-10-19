@@ -1,0 +1,3 @@
+RB101|GLUCOSE_KIT|Glucose Assay Kit|packs|2026-12-31|10
+RB102|GLUCOSE_KIT|Glucose Assay Kit|packs|2026-11-05|4
+RB103|GLUCOSE_KIT|Glucose Assay Kit|packs|2026-10-18|6

@@ -1,0 +1,18 @@
+Verification date: 2026-10-19
+Project: Lab Reagent Inventory and FEFO Allocation
+Platform actually tested: Linux
+Compiler: gcc (Debian 14.2.0-19) 14.2.0
+
+Command:
+gcc main.c -std=c11 -Wall -Wextra -Wpedantic -Werror -Wconversion -Wshadow -o reagent_inventory
+Build result: PASS; no diagnostic output.
+
+Integration test methods: 68 passed / 68 run.
+One method includes 50 fixed-seed oracle scenarios, not counted as 50 methods.
+Same suite with UndefinedBehaviorSanitizer: 68/68 PASS.
+Additional GCC -fanalyzer -c compilation with strict warnings: PASS, no diagnostics.
+Clean-start C demonstration: PASS; actual output in SAMPLE_OUTPUT.md.
+
+Windows execution and remote GitHub Actions were not tested here.
+Passing checks is not clinical validation or a proof of no remaining defects.
+See TEST_RESULTS.md and tests/LAST_TEST_RUN.txt.

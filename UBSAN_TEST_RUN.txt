@@ -1,0 +1,141 @@
+test_all_stock_expired (__main__.ReagentInventoryTests.test_all_stock_expired)
+When all batches are expired, valid availability is zero and nothing is issued. ... ok
+test_batch_limit (__main__.ReagentInventoryTests.test_batch_limit)
+At 300 batches another receipt is refused without changing saved bytes. ... ok
+test_blank_binary_and_overlong_saved_rows (__main__.ReagentInventoryTests.test_blank_binary_and_overlong_saved_rows)
+Blank, null-containing and overlong rows are refused without rewriting data. ... ok
+test_cancel_plan (__main__.ReagentInventoryTests.test_cancel_plan)
+A displayed plan with n/N confirmation consumes no stock. ... ok
+test_case_sensitive_codes (__main__.ReagentInventoryTests.test_case_sensitive_codes)
+Case-sensitive reagent codes remain distinct inventory products. ... ok
+test_clean_start_list (__main__.ReagentInventoryTests.test_clean_start_list)
+A fresh project is empty and does not invent or automatically seed records. ... ok
+test_crlf_and_unterminated_saved_rows (__main__.ReagentInventoryTests.test_crlf_and_unterminated_saved_rows)
+CRLF records and a valid final row without newline load correctly. ... ok
+test_crlf_console_input (__main__.ReagentInventoryTests.test_crlf_console_input)
+CRLF input leaves no stray newline/menu errors. ... ok
+test_date_junk_not_truncated (__main__.ReagentInventoryTests.test_date_junk_not_truncated)
+Trailing text after a date is rejected rather than truncated into a valid date. ... ok
+test_duplicate_batch (__main__.ReagentInventoryTests.test_duplicate_batch)
+Duplicate batch IDs are rejected before requesting more fields. ... ok
+test_duplicate_saved_id (__main__.ReagentInventoryTests.test_duplicate_saved_id)
+Duplicate IDs on disk are caught before any editing. ... ok
+test_empty_report (__main__.ReagentInventoryTests.test_empty_report)
+An empty report gives a no-records message without unnecessary date prompts. ... ok
+test_empty_saved_file (__main__.ReagentInventoryTests.test_empty_saved_file)
+An existing empty file is a valid clean inventory. ... ok
+test_eof_during_confirmation (__main__.ReagentInventoryTests.test_eof_during_confirmation)
+EOF after a plan but before confirmation leaves inventory unchanged. ... ok
+test_eof_menu (__main__.ReagentInventoryTests.test_eof_menu)
+EOF at the menu exits cleanly rather than looping forever. ... ok
+test_eof_registration (__main__.ReagentInventoryTests.test_eof_registration)
+EOF before all required receipt fields cancels the incomplete batch. ... ok
+test_exact_available_issue (__main__.ReagentInventoryTests.test_exact_available_issue)
+An issue equal to the available total consumes all eligible stock, never below zero. ... ok
+test_exact_menu (__main__.ReagentInventoryTests.test_exact_menu)
+Trailing text, a leading zero and arbitrary words are not menu numbers. ... ok
+test_excess_batch_file (__main__.ReagentInventoryTests.test_excess_batch_file)
+A 301-row file is rejected instead of silently dropping the final record. ... ok
+test_expired_batches_excluded (__main__.ReagentInventoryTests.test_expired_batches_excluded)
+Expired stock is neither allocated nor counted toward valid availability. ... ok
+test_expiry_date_inclusive_model (__main__.ReagentInventoryTests.test_expiry_date_inclusive_model)
+The documented classroom rule permits a batch on its recorded expiry date. ... ok
+test_extra_saved_field (__main__.ReagentInventoryTests.test_extra_saved_field)
+Extra record fields are detected by the bounded scan's final character check. ... ok
+test_failed_backup_keeps_original (__main__.ReagentInventoryTests.test_failed_backup_keeps_original)
+A backup-path replacement failure restores proposed deductions and keeps the main file. ... ok
+test_failed_issue_rolls_back_memory_and_disk (__main__.ReagentInventoryTests.test_failed_issue_rolls_back_memory_and_disk)
+A blocked temporary file leaves both saved data and subsequent search quantities unchanged. ... ok
+test_fefo_equal_expiry_tie_break (__main__.ReagentInventoryTests.test_fefo_equal_expiry_tie_break)
+Equal expiry dates use lexicographic batch ID for deterministic allocation. ... ok
+test_fefo_not_receipt_order (__main__.ReagentInventoryTests.test_fefo_not_receipt_order)
+A later-received batch expiring earlier is issued before the first received batch. ... ok
+test_final_input_without_newline (__main__.ReagentInventoryTests.test_final_input_without_newline)
+A final exit choice without a newline is accepted. ... ok
+test_id_character_rules (__main__.ReagentInventoryTests.test_id_character_rules)
+IDs reject spaces/slashes and accept letters, digits, underscores and hyphens. ... ok
+test_inconsistent_saved_product_metadata (__main__.ReagentInventoryTests.test_inconsistent_saved_product_metadata)
+The same code cannot silently mix product names or stock units. ... ok
+test_insufficient_no_partial_issue (__main__.ReagentInventoryTests.test_insufficient_no_partial_issue)
+Insufficient valid stock makes no partial deductions and does not ask for confirmation. ... ok
+test_invalid_confirmation (__main__.ReagentInventoryTests.test_invalid_confirmation)
+Words other than exact y/Y/n/N do not accidentally confirm an issue. ... ok
+test_invalid_dates (__main__.ReagentInventoryTests.test_invalid_dates)
+Impossible, signed, shortened and out-of-range dates are rejected. ... ok
+test_invalid_issue_date (__main__.ReagentInventoryTests.test_invalid_issue_date)
+An invalid issue date prevents planning or stock changes. ... ok
+test_invalid_issue_quantity (__main__.ReagentInventoryTests.test_invalid_issue_quantity)
+Issue requests must be positive digit-only whole quantities within the limit. ... ok
+test_invalid_receipt_quantities (__main__.ReagentInventoryTests.test_invalid_receipt_quantities)
+Receipts reject zero, negatives, signs, fractions, exponents, suffixes and over-limit values. ... ok
+test_invalid_report_input (__main__.ReagentInventoryTests.test_invalid_report_input)
+Invalid report dates/thresholds do not edit saved inventory. ... ok
+test_invalid_saved_date (__main__.ReagentInventoryTests.test_invalid_saved_date)
+Saved dates are revalidated, not blindly trusted. ... ok
+test_invalid_saved_quantity (__main__.ReagentInventoryTests.test_invalid_saved_quantity)
+Negative, signed, fractional, overflow and excessive saved quantities are refused. ... ok
+test_large_valid_total_no_overflow (__main__.ReagentInventoryTests.test_large_valid_total_no_overflow)
+The full 300-batch maximum total 300000000 is summed correctly without overflow. ... ok
+test_leap_and_supported_year_boundaries (__main__.ReagentInventoryTests.test_leap_and_supported_year_boundaries)
+Leap days in 2000/2028 and the upper supported date 9999-12-31 are accepted. ... ok
+test_malformed_middle_row (__main__.ReagentInventoryTests.test_malformed_middle_row)
+A malformed middle row blocks startup and preserves the full original file. ... ok
+test_maximum_field_lengths (__main__.ReagentInventoryTests.test_maximum_field_lengths)
+Exact documented ID/code/name/unit length limits are accepted without truncation. ... ok
+test_multiple_codes_isolated (__main__.ReagentInventoryTests.test_multiple_codes_isolated)
+An issue for one code never consumes another product, even with an earlier expiry. ... ok
+test_one_over_id_length (__main__.ReagentInventoryTests.test_one_over_id_length)
+An ID exceeding its maximum by one character is rejected, not truncated. ... ok
+test_orphan_backup_recovery_warning (__main__.ReagentInventoryTests.test_orphan_backup_recovery_warning)
+A backup without the main file triggers recovery instead of silently starting empty. ... ok
+test_outer_whitespace (__main__.ReagentInventoryTests.test_outer_whitespace)
+Surrounding console whitespace is trimmed; spaces inside the name remain. ... ok
+test_overlong_line_drained (__main__.ReagentInventoryTests.test_overlong_line_drained)
+An overlong ID is rejected and fully consumed before the next menu. ... ok
+test_previous_main_backed_up (__main__.ReagentInventoryTests.test_previous_main_backed_up)
+A successful replacement preserves the previous main file in .bak. ... ok
+test_quantity_erange_and_long_input (__main__.ReagentInventoryTests.test_quantity_erange_and_long_input)
+Huge integers and overlong numeric input are rejected without overflow or spillover. ... ok
+test_quantity_leading_zeroes (__main__.ReagentInventoryTests.test_quantity_leading_zeroes)
+Digit-only quantities with leading zeroes are saved as canonical integers. ... ok
+test_quantity_upper_boundary (__main__.ReagentInventoryTests.test_quantity_upper_boundary)
+The maximum per-batch quantity 1000000 is accepted. ... ok
+test_randomized_fefo_against_python_oracle (__main__.ReagentInventoryTests.test_randomized_fefo_against_python_oracle)
+Fifty fixed-seed mixed inventories match an independent sorted FEFO oracle and conservation rules. ... ok
+test_reagent_code_character_rules (__main__.ReagentInventoryTests.test_reagent_code_character_rules)
+Invalid reagent codes are refused before name/unit prompts. ... ok
+test_receipt_save_failure (__main__.ReagentInventoryTests.test_receipt_save_failure)
+A blocked temporary path causes no false receipt or in-memory count increase. ... ok
+test_receive_existing_product_reuses_metadata (__main__.ReagentInventoryTests.test_receive_existing_product_reuses_metadata)
+A later batch of a known code reuses its saved name/unit without reprompting. ... ok
+test_receive_new_product (__main__.ReagentInventoryTests.test_receive_new_product)
+A valid new product and batch save exactly one canonical six-field row. ... ok
+test_repeated_issues_never_negative (__main__.ReagentInventoryTests.test_repeated_issues_never_negative)
+After stock reaches zero, further requests cannot make it negative. ... ok
+test_report_does_not_mix_product_units (__main__.ReagentInventoryTests.test_report_does_not_mix_product_units)
+Available totals are per reagent code/unit, never one sum of packs and bottles. ... ok
+test_restart_persistence (__main__.ReagentInventoryTests.test_restart_persistence)
+A saved receipt remains searchable after restarting the application. ... ok
+test_search_existing (__main__.ReagentInventoryTests.test_search_existing)
+Search displays the full code, name, unit, expiry and quantity. ... ok
+test_search_missing (__main__.ReagentInventoryTests.test_search_missing)
+Searching an unknown batch returns a clear not-found message. ... ok
+test_stock_report_categories_and_low_threshold (__main__.ReagentInventoryTests.test_stock_report_categories_and_low_threshold)
+The report distinguishes eligible/expired/empty lots and flags valid totals at the threshold. ... ok
+test_text_validation (__main__.ReagentInventoryTests.test_text_validation)
+Blank, pipe-containing and control-character names are refused. ... ok
+test_unknown_issue_code (__main__.ReagentInventoryTests.test_unknown_issue_code)
+Unknown codes return before asking for a date or quantity. ... ok
+test_uppercase_yes_and_restart (__main__.ReagentInventoryTests.test_uppercase_yes_and_restart)
+Y confirms an issue and the reduced stock persists after restart. ... ok
+test_zero_batches_excluded (__main__.ReagentInventoryTests.test_zero_batches_excluded)
+Empty batches are not allocated even if they expire before the stocked batch. ... ok
+test_zero_report_threshold (__main__.ReagentInventoryTests.test_zero_report_threshold)
+Threshold zero is allowed and marks an out-of-stock reagent as LOW. ... ok
+test_zero_saved_quantity (__main__.ReagentInventoryTests.test_zero_saved_quantity)
+A depleted batch with zero quantity remains a valid saved record. ... ok
+
+----------------------------------------------------------------------
+Ran 68 tests in 0.671s
+
+OK

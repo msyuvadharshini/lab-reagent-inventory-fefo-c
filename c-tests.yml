@@ -1,0 +1,26 @@
+name: Reagent inventory C checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  compile-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+      - name: Set up Python for the optional test runner
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile C11 and run the integration suite
+        run: python tests/run_tests.py -v
+      - name: Repeat with UndefinedBehaviorSanitizer
+        env:
+          CFLAGS: '-std=c11 -Wall -Wextra -Wpedantic -Werror -Wconversion -Wshadow -fsanitize=undefined -fno-sanitize-recover=all -g'
+        run: python tests/run_tests.py -v

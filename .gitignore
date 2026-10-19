@@ -1,0 +1,20 @@
+# Compiled output
+*.exe
+*.o
+*.obj
+*.out
+a.out
+program_check
+reagent_inventory
+
+# Runtime records, temporary data and backups
+reagent_batches.txt
+*.tmp
+*.bak
+
+# Test/editor/OS caches
+__pycache__/
+*.pyc
+.vscode/
+.DS_Store
+Thumbs.db
